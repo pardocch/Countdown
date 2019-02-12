@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countdown Example</title>
+	<script type="text/javascript" src="../src/countdown.js"></script>
+</head>
+<body>
+	<div id="countdown1"></div>
+	<span id="countdown2"></span>
+	<script type="text/javascript">
+		(function(){
+			let time = parseInt((Date.now() / 1000) | 0) + 259203;
+			let countdown1 = new Countdown(time, document.querySelector('#countdown1'));
+			let countdown2 = new Countdown(time, document.querySelector('#countdown2'));
+			countdown1.enableField({
+				"year": false,
+				"month": false,
+				"day": true,
+				"hour": false,
+				"minute": false,
+				"second": false
+			});
+			countdown1.display();
+			countdown2.display();
+		})();
+	</script>
+</body>
+</html>
